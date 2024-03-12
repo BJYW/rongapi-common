@@ -1,16 +1,13 @@
 package config
 
 import (
+	"github.com/BJYW/rongapi-common/mgopool"
 	"log"
 	"math/rand"
-
 	"time"
-
-	"git.oschina.net/xujiang/rongapi-common/mgopool"
-	"gopkg.in/mgo.v2"
 )
 
-//Config 全局配置
+// Config 全局配置
 var Config TConfig
 var initSession *mgo.Session
 

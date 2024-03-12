@@ -4,18 +4,17 @@ import (
 	"crypto/md5"
 	"encoding/hex"
 	"fmt"
-	"git.oschina.net/xujiang/rongapi-common/utils"
+	"github.com/BJYW/rongapi-common/utils"
 	"strconv"
 	"time"
 
 	"go.uber.org/zap/zapcore"
 
-	"git.oschina.net/xujiang/rongapi-common/charge"
-	"git.oschina.net/xujiang/rongapi-common/config"
+	"github.com/BJYW/rongapi-common/charge"
+	"github.com/BJYW/rongapi-common/config"
 
 	"github.com/golang/glog"
 	"go.uber.org/zap"
-	"gopkg.in/mgo.v2"
 	"gopkg.in/mgo.v2/bson"
 )
 
@@ -43,7 +42,7 @@ func (r *Request) MarshalLogObject(enc zapcore.ObjectEncoder) error {
 	return nil
 }
 
-//BeforeRequest
+// BeforeRequest
 func (r *Request) PreProgress() error {
 	hash := md5.New()
 	//虽然本处有telno做键，但固定为空
@@ -58,7 +57,7 @@ func (r *Request) PreProgress() error {
 // 	return fmt.Sprintf("idcode=%s&name=%s&seqno=%s&telno=%s", r.IdCode, r.Name, r.Seqno, r.Telno)
 // }
 
-//LoadSuccess 获取成功
+// LoadSuccess 获取成功
 func (r *Request) PostProgress(res interface{}, cost int, err error, remark map[string]charge.Remark) (interface{}, int, error, map[string]charge.Remark) {
 	if result, ok := res.(*Result); ok {
 		var code int

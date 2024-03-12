@@ -6,9 +6,8 @@ import (
 	"fmt"
 	"time"
 
-	"git.oschina.net/xujiang/rongapi-common/config"
+	"github.com/BJYW/rongapi-common/config"
 	"github.com/golang/glog"
-	"gopkg.in/mgo.v2"
 	"gopkg.in/mgo.v2/bson"
 )
 
@@ -109,7 +108,6 @@ func (oldChecked *Result) merge(newChecked *Result) {
 	oldChecked.MobilePhone = merge(oldChecked.MobilePhone, newChecked.MobilePhone)
 }
 
-//
 func merge(oldChecked interface{}, newChecked interface{}) interface{} {
 	//将old merge 到new里面
 	switch told := oldChecked.(type) {

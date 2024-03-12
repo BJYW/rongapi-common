@@ -5,12 +5,11 @@ import (
 	"sync"
 	"time"
 
-	"git.oschina.net/xujiang/rongapi-common/mgopool/cmap_string_session"
+	"github.com/BJYW/rongapi-common/mgopool/cmap_string_session"
 
 	"go.uber.org/zap"
 
 	"github.com/golang/glog"
-	"gopkg.in/mgo.v2"
 )
 
 const (
